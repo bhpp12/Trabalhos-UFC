@@ -66,7 +66,7 @@ def main(caminho_dataset):
     #4. Rankings
     ranking_programas = gerar_ranking(contar_por_chave(trabalhos, lambda t: t.programa))
     ranking_orientadores = gerar_ranking(contar_por_chave(trabalhos, lambda t: t.orientador))
-    ranking_areas = gerar_ranking(contar_por_chave(trabalhos, lambda t: t.grande_area))
+    ranking_areas = gerar_ranking(contar_por_chave(trabalhos, lambda t: f"{t.grande_area} / {t.area}"))
     ranking_palavras = gerar_ranking(frequencia_total, top_n=20)
     
     #5. Exibir resultados
